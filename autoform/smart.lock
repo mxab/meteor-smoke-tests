@@ -1,0 +1,31 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "autoform": {},
+      "collection2": {}
+    },
+    "packages": {
+      "autoform": {
+        "git": "https://github.com/aldeed/meteor-autoform.git",
+        "tag": "v0.4.18",
+        "commit": "991efc809b959e77d94796f47ca6c5b1e5c2c6e2"
+      },
+      "collection2": {
+        "git": "https://github.com/aldeed/meteor-collection2.git",
+        "tag": "v0.3.8",
+        "commit": "69aff2a21ba3c382f915e1f9dbcca2ad38edb6d5"
+      },
+      "simple-schema": {
+        "git": "https://github.com/aldeed/meteor-simple-schema.git",
+        "tag": "v0.2.38",
+        "commit": "2deec0041fc6cb2666df8cd6a51914e499e95683"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.5.1",
+        "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+      }
+    }
+  }
+}

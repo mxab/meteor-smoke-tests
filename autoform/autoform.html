@@ -1,0 +1,83 @@
+<head>
+    <title>autoform</title>
+</head>
+
+<body>
+
+{{> insertPersonForm}}
+{{> persons}}
+
+{{> editPersonForm}}
+</body>
+
+
+<template name="insertPersonForm">
+
+    {{#autoForm schema=personCollection id="insertPersonForm" novalidate=""}}
+    <fieldset>
+        <legend>Add a Person</legend>
+        <div class="form-group{{#if afFieldIsInvalid 'firstName'}} has-error{{/if}}">
+            {{afFieldLabel 'firstName'}}
+            {{afFieldInput 'firstName'}}
+            {{#if afFieldIsInvalid 'firstName'}}
+            <span class="help-block">{{afFieldMessage 'firstName'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'lastName'}} has-error{{/if}}">
+            {{afFieldLabel 'lastName'}}
+            {{afFieldInput 'lastName'}}
+            {{#if afFieldIsInvalid 'lastName'}}
+            <span class="help-block">{{afFieldMessage 'lastName'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'birthDay'}} has-error{{/if}}">
+            {{afFieldLabel 'birthDay'}}
+            {{afFieldInput 'birthDay'}}
+            {{#if afFieldIsInvalid 'birthDay'}}
+            <span class="help-block">{{afFieldMessage 'birthDay'}}</span>
+            {{/if}}
+        </div>
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary insert">Insert</button>
+    {{/autoForm}}
+</template>
+<template name="editPersonForm">
+
+    {{#if person}}
+    {{#autoForm schema=personCollection id="editPersonForm" novalidate="" doc=person}}
+    <fieldset>
+        <legend>Edit a Person</legend>
+        <div class="form-group{{#if afFieldIsInvalid 'firstName'}} has-error{{/if}}">
+            {{afFieldLabel 'firstName'}}
+            {{afFieldInput 'firstName'}}
+            {{#if afFieldIsInvalid 'firstName'}}
+            <span class="help-block">{{afFieldMessage 'firstName'}}</span>
+            {{/if}}
+        </div>
+
+        <div class="form-group{{#if afFieldIsInvalid 'birthDay'}} has-error{{/if}}">
+            {{afFieldLabel 'birthDay'}}
+            {{afFieldInput 'birthDay'}}
+            {{#if afFieldIsInvalid 'birthDay'}}
+            <span class="help-block">{{afFieldMessage 'birthDay'}}</span>
+            {{/if}}
+        </div>
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary update">Upload</button>
+    {{/autoForm}}
+
+    {{/if}}
+</template>
+
+
+<template name="persons">
+    <ul>
+        {{#each persons}}
+        <li>{{firstName}} {{lastName}} ({{birthDay}})
+            <button class="js-edit">edit</button>
+        </li>
+        {{/each}}
+    </ul>
+</template>
