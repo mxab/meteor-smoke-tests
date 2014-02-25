@@ -1,0 +1,18 @@
+<head>
+  <title>smartform</title>
+</head>
+
+<body>
+  {{> personForm}}
+</body>
+
+<template name="personForm">
+  <form>
+      <input name="firstName" />
+      <input name="lastName" />
+
+
+      <button {{#unless isPersonValid}} disabled {{/unless}}>Submit</button>
+
+  </form>
+</template>
