@@ -1,0 +1,32 @@
+<template name="playerForm">
+    {{player}}
+    {{#if player}}update{{else}}insert{{/if}}
+    {{#autoForm schema=playerSchema novalidate="" doc=player}}
+    <fieldset>
+        <legend>Add a Person</legend>
+        <div class="form-group{{#if afFieldIsInvalid 'firstName'}} has-error{{/if}}">
+            {{afFieldLabel 'firstName' for="firstName"}}
+            {{afFieldInput 'firstName' id="firstName"}}
+            {{#if afFieldIsInvalid 'firstName'}}
+            <span class="help-block">{{afFieldMessage 'firstName'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'lastName'}} has-error{{/if}}">
+            {{afFieldLabel 'lastName'}}
+            {{afFieldInput 'lastName'}}
+            {{#if afFieldIsInvalid 'lastName'}}
+            <span class="help-block">{{afFieldMessage 'lastName'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'birthDay'}} has-error{{/if}}">
+            {{afFieldLabel 'birthDay'}}
+            {{afFieldInput 'birthDay' class="datepicker"}}
+            {{#if afFieldIsInvalid 'birthDay'}}
+            <span class="help-block">{{afFieldMessage 'birthDay'}}</span>
+            {{/if}}
+        </div>
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary {{#if player}}update{{else}}insert{{/if}}">Insert</button>
+    {{/autoForm}}
+</template>

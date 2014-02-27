@@ -13,12 +13,12 @@
 
 <template name="insertPersonForm">
 
-    {{#autoForm schema=personCollection id="insertPersonForm" novalidate=""}}
+    {{#autoForm schema="Persons" id="insertPersonForm" novalidate=""}}
     <fieldset>
         <legend>Add a Person</legend>
         <div class="form-group{{#if afFieldIsInvalid 'firstName'}} has-error{{/if}}">
-            {{afFieldLabel 'firstName'}}
-            {{afFieldInput 'firstName'}}
+            {{afFieldLabel 'firstName' for="firstName"}}
+            {{afFieldInput 'firstName' id="firstName"}}
             {{#if afFieldIsInvalid 'firstName'}}
             <span class="help-block">{{afFieldMessage 'firstName'}}</span>
             {{/if}}
@@ -45,7 +45,7 @@
 <template name="editPersonForm">
 
     {{#if person}}
-    {{#autoForm schema=personCollection id="editPersonForm" novalidate="" doc=person}}
+    {{#autoForm schema="Persons" id="editPersonForm" novalidate="" doc=person}}
     <fieldset>
         <legend>Edit a Person</legend>
         <div class="form-group{{#if afFieldIsInvalid 'firstName'}} has-error{{/if}}">
@@ -65,7 +65,7 @@
         </div>
 
     </fieldset>
-    <button type="submit" class="btn btn-primary update">Upload</button>
+    <button type="submit" class="btn btn-primary update">Update</button>
     {{/autoForm}}
 
     {{/if}}

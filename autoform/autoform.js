@@ -21,12 +21,6 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
 
-    Template.insertPersonForm.personCollection = function(){
-        return Persons;
-    }
-    Template.editPersonForm.personCollection = function(){
-        return Persons;
-    }
     Template.persons.persons = function(){
         return Persons.find();
     }

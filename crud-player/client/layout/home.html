@@ -1,0 +1,18 @@
+<template name="home">
+    <h1>Welcome to the CRUD example sandbox</h1>
+
+    {{#if players}}
+    <ul>
+        {{#each players}}
+        {{>player}}
+        {{/each}}
+    </ul>
+    {{else}}
+    <h5>No Players inserted</h5>
+    {{/if}}
+</template>
+
+<template name="player">
+    <li>{{firstName}} {{lastName}}</li>
+
+</template>
