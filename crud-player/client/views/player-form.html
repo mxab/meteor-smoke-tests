@@ -1,6 +1,4 @@
 <template name="playerForm">
-    {{player}}
-    {{#if player}}update{{else}}insert{{/if}}
     {{#autoForm schema=playerSchema novalidate="" doc=player}}
     <fieldset>
         <legend>Add a Person</legend>
@@ -27,6 +25,6 @@
         </div>
 
     </fieldset>
-    <button type="submit" class="btn btn-primary {{#if player}}update{{else}}insert{{/if}}">Insert</button>
+    <button type="submit" class="btn btn-primary {{#if _templateData.player}}update{{else}}insert{{/if}}">Save</button>
     {{/autoForm}}
 </template>

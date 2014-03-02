@@ -18,12 +18,28 @@ Template.playerForm.helpers({
     }
 });
 
-Template.playerForm.rendered = function() {
-    $('.datepicker').datepicker();
+/**
+ * for only one specific one
+ */
+Template.playerForm.rendered = function () {
+    $('.datepicker').datepicker({
+        format: "yyyy-mm-dd"
+    });
 }
-
+/**
+ * for usage for all autoform and all datepicker. Move following code to lib
+ */
+/*
+Template._autoForm.rendered = function () {
+    $('input[type=date]').datepicker({
+        format: "yyyy-mm-dd"
+    });
+}
+*/
 playerForm.hooks({
-    onSuccess: function (operation, result, template) {
-        Router.go("editPlayer", {_id: result});
+    after: {
+        insert: function (operation, result, template) {
+            Router.go("editPlayer", {_id: result});
+        }
     }
 });
