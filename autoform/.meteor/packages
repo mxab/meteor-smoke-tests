@@ -9,3 +9,6 @@ insecure
 preserve-inputs
 collection2
 autoform
+
+# own package
+tinymce-jquery-meteor

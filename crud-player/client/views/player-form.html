@@ -23,6 +23,14 @@
             <span class="help-block">{{afFieldMessage 'birthDay'}}</span>
             {{/if}}
         </div>
+        <div class="form-group{{#if afFieldIsInvalid 'description'}} has-error{{/if}}">
+            {{afFieldLabel 'description'}}
+            {{afFieldInput 'description' rows="5" class="tinymce"}}
+            {{#if afFieldIsInvalid 'description'}}
+            <span class="help-block">{{afFieldMessage 'description'}}</span>
+            {{/if}}
+        </div>
+
 
     </fieldset>
     <button type="submit" class="btn btn-primary {{#if _templateData.player}}update{{else}}insert{{/if}}">Save</button>

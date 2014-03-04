@@ -10,7 +10,7 @@ Players = new Meteor.Collection("players", {
         birthDay: {
             type: Date
         },
-        cv: {
+        description: {
             type: String,
             optional : true
         }
