@@ -31,6 +31,26 @@
             {{/if}}
         </div>
 
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+                <a href="#tab-1" data-toggle="tab">
+                    {{afFieldInput 'descriptions.1.title' options=descriptionTitleSelect}}
+                </a>
+            </li>
+            <li><a href="#tab-2" data-toggle="tab">
+                {{afFieldInput 'descriptions.2.title' options=descriptionTitleSelect}}
+            </a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-1">
+                {{afFieldInput 'descriptions.1.content' rows="5"}}
+            </div>
+            <div class="tab-pane" id="tab-2">
+                {{afFieldInput 'descriptions.2.content' rows="5"}}
+            </div>
+        </div>
 
     </fieldset>
     <button type="submit" class="btn btn-primary {{#if _templateData.player}}update{{else}}insert{{/if}}">Save</button>

@@ -10,8 +10,6 @@ Package.on_use(function (api) {
         'tinymce/js/tinymce/tinymce.min.js',
         'tinymce/js/tinymce/jquery.tinymce.min.js',
         'tinymce/js/tinymce/themes/modern/theme.min.js',
-
-
     ], 'client');
 
     var plugins = [

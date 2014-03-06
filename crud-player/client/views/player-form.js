@@ -7,6 +7,18 @@ Template.playerForm.helpers({
      */
     playerSchema: function () {
         return playerForm;
+    },
+    /**
+     * LabelValues for the select field
+     *
+     * @returns {*[]}
+     */
+    descriptionTitleSelect: function () {
+        return [
+            {label: "Description", value: 1},
+            {label: "Variation", value: 2},
+            {label: "Something else", value: 3}
+        ];
     }
 });
 

@@ -11,8 +11,15 @@ Players = new Meteor.Collection("players", {
             type: Date
         },
         description: {
+            type: String
+        },
+        "descriptions.$.title": {
             type: String,
-            optional : true
+            optional: true
+        },
+        "descriptions.$.content": {
+            type: String,
+            optional: true
         }
     }
 });

@@ -27,3 +27,6 @@
 /cfs-tempstore
 /reactive-property
 /micro-queue
+/cfs-upload-http
+/cfs-upload-ddp
+/http-publish
