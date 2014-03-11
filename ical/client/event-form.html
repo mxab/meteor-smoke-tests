@@ -1,0 +1,45 @@
+<template name="eventForm">
+    {{#autoForm schema=eventSchema novalidate="" doc=event}}
+    <fieldset>
+        <legend>Add a Person</legend>
+        <div class="form-group{{#if afFieldIsInvalid 'start'}} has-error{{/if}}">
+            {{afFieldLabel 'start' for="start"}}
+            {{afFieldInput 'start' id="start"}}
+            {{#if afFieldIsInvalid 'start'}}
+            <span class="help-block">{{afFieldMessage 'start'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'end'}} has-error{{/if}}">
+            {{afFieldLabel 'end' for="end"}}
+            {{afFieldInput 'end' id="end"}}
+            {{#if afFieldIsInvalid 'end'}}
+            <span class="help-block">{{afFieldMessage 'end'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'title'}} has-error{{/if}}">
+            {{afFieldLabel 'title'}}
+            {{afFieldInput 'title'}}
+            {{#if afFieldIsInvalid 'title'}}
+            <span class="help-block">{{afFieldMessage 'title'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'location'}} has-error{{/if}}">
+            {{afFieldLabel 'location'}}
+            {{afFieldInput 'location'}}
+            {{#if afFieldIsInvalid 'location'}}
+            <span class="help-block">{{afFieldMessage 'location'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'description'}} has-error{{/if}}">
+            {{afFieldLabel 'description'}}
+            {{afFieldInput 'description' rows="5"}}
+            {{#if afFieldIsInvalid 'description'}}
+            <span class="help-block">{{afFieldMessage 'description'}}</span>
+            {{/if}}
+        </div>
+
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary {{#if _templateData.event}}update{{else}}insert{{/if}}">Save</button>
+    {{/autoForm}}
+</template>

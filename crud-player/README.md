@@ -4,7 +4,6 @@ Run following code for install the required packages:
 
     mrt add accounts-ui-bootstrap-3
     mrt add bootstrap3-less
-    mrt add moment
     mrt add iron-router
     mrt add autoform
     mrt add collection2

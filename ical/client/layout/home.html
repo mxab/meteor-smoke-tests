@@ -1,0 +1,18 @@
+<template name="home">
+    <h1>Welcome to the CRUD example sandbox</h1>
+
+    {{#if eventList}}
+    <ul>
+        {{#each eventList}}
+        {{>event}}
+        {{/each}}
+    </ul>
+    {{else}}
+    <h5>No Events inserted</h5>
+    {{/if}}
+</template>
+
+<template name="event">
+    <li>{{title}} {{location}} <a href="{{pathFor 'eventForm'}}" class="btn btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> </li>
+
+</template>

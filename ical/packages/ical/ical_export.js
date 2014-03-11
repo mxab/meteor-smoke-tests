@@ -1,0 +1,1 @@
+ICAL = Npm.require('ical-generator');

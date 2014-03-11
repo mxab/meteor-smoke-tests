@@ -76,6 +76,10 @@ Template.playerForm.rendered = function () {
  });
  }
  */
+
+/**
+ * Hook for routing to edit Player after insertion
+ */
 playerForm.hooks({
 
     after: {
