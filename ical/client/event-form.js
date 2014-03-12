@@ -13,9 +13,17 @@ Template.eventForm.helpers({
 
 Template._autoForm.rendered = function () {
 
-    $('input[type=date]').datepicker({
-        format: "yyyy-mm-dd"
+    $('.datetime').datetimepicker({
+        language: "de"
     });
+
+    $(".fromDatetime").on("dp.change",function (e) {
+        $('.toDatetime').data("DateTimePicker").setMinDate(e.date);
+    });
+    $(".toDatetime").on("dp.change",function (e) {
+        $('.fromDatetime').data("DateTimePicker").setMaxDate(e.date);
+    });
+
 
 };
 
@@ -23,11 +31,25 @@ Template._autoForm.rendered = function () {
  * Hook for routing to edit event after insertion
  */
 eventForm.hooks({
+    before: {
+        insert: function (doc) {
+
+            doc._meta = {
+                ownerId: Meteor.userId()
+            };
+            return doc;
+        }
+    },
 
     after: {
         insert: function (operation, result, template) {
-            console.log(result);
-            Router.go("eventForm", {_id: result});
+            if (result) {
+                Router.go("eventForm", {_id: result});
+            }
         }
+    },
+    onError: function (operation, error, template) {
+
+        console.log(arguments);
     }
 });

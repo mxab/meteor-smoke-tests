@@ -1,19 +1,22 @@
+MetaSchema = new SimpleSchema({
+    ownerId: {
+        type: String
+    }
+});
+
 Events = new Meteor.Collection("events", {
     schema: {
         start: {
-            type: Date
+            type: String
         },
         end: {
-            type: Date
+            type: String
         },
         userId: {
             type: String,
             optional: true
         },
         title: {
-            type: String
-        },
-        summary: {
             type: String
         },
         description: {
@@ -23,6 +26,10 @@ Events = new Meteor.Collection("events", {
         location: {
             type: String,
             optional: true
+        },
+        _meta: {
+            type: MetaSchema,
+            optional : true
         }
     }
 });
@@ -31,21 +38,21 @@ Events = new Meteor.Collection("events", {
 Events.allow({
     insert: function (userId, doc) {
         // the user must be logged in, and the document must be owned by the user
-        //return (userId && doc.owner === userId);
+        //return (userId && doc.ownerId === userId);
 
         // for testing true
         return true;
     },
     update: function (userId, doc, fields, modifier) {
         // can only change your own documents
-        //return doc.owner === userId;
+        //return doc.ownerId === userId;
 
         // for testing
         return true;
     },
     remove: function (userId, doc) {
         // can only remove your own documents
-        return doc.owner === userId;
+       // return doc.ownerId === userId;
 
         // for testing
         return true;
