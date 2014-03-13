@@ -7,8 +7,8 @@ Package.on_use(function (api) {
     api.use('moment');
 
     api.add_files([
-        'vendor/build/css/bootstrap-datetimepicker.css',
-        'vendor/src/js/bootstrap-datetimepicker.js',
-        'vendor/src/js/locales/bootstrap-datetimepicker.de.js'
+        'bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css',
+        'bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
+        'bower_components/eonasdan-bootstrap-datetimepicker/src/js/locales/bootstrap-datetimepicker.de.js'
     ], 'client');
 });
