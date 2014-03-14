@@ -1,0 +1,23 @@
+{
+  "name": "fullcalendar",
+  "version": "2.0.0-beta2",
+  "devDependencies": {
+    "moment": ">=2.5.0",
+    "jquery": "~1.10.2",
+    "jquery-ui": "~1.10.3",
+    "jquery-simulate": "*",
+    "jasmine-jquery": "~1.7.0",
+    "jasmine-fixture": "~1.0.8"
+  },
+  "homepage": "https://github.com/arshaw/fullcalendar",
+  "_release": "2.0.0-beta2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0-beta2",
+    "commit": "a67f1142ca8116a9718c9bbafe746356a3a88d9c"
+  },
+  "_source": "https://github.com/arshaw/fullcalendar.git",
+  "_target": "v2",
+  "_originalSource": "https://github.com/arshaw/fullcalendar.git",
+  "_direct": true
+}

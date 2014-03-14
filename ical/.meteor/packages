@@ -11,7 +11,7 @@ bootstrap-3
 accounts-password
 accounts-ui-bootstrap-3
 autoform
-bootstrap-datepicker2
 
 ical
 bootstrap-datetimepicker
+meteor-fullcalendar-v2
